@@ -17,6 +17,7 @@ class Manticoresearch < Formula
   end
 
   bottle do
+    root_url "http://dev.manticoresearch.com"
     sha256 "7a1f85bb570a53aee8719b66b1dd8709ad323e59d221bf0bd08ada435dbf7d0f" => :sierra
   end
 

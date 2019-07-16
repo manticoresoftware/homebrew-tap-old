@@ -5,11 +5,12 @@ class Manticoresearch < Formula
   version "3.1.0"
   sha256 "b8eba31eea5f6f5cf7cb7986c94cb40904f96da99e178c724e7f0081de02388e"
   head "https://github.com/manticoresoftware/manticoresearch.git"
+  
   depends_on "cmake" => :build
+  depends_on "icu4c" => :build
   depends_on "libpq" => :build
   depends_on "mysql@5.7" => :build
   depends_on "unixodbc" => :build
-  depends_on "icu4c" => :build
   depends_on "openssl"
   conflicts_with "sphinx",
    :because => "manticore,sphinx install the same binaries."

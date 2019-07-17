@@ -11,7 +11,7 @@ class Manticoresearch < Formula
     sha256 "f65aba206f02510a1cd52ab7457e6c132f5840f307aef3cc3e6a8870cf373449" => :sierra
     sha256 "bd4fecc8aeecef32d9e7ac11dc09ef6f9550a512ac25a29a60af3b5145a5234b" => :mojave
   end
- 
+
   depends_on "cmake" => :build
   depends_on "icu4c" => :build
   depends_on "libpq" => :build

@@ -18,7 +18,11 @@ class Manticoresearch < Formula
     var/"manticore/data"
   end
 
-  def install
+  bottle do
+    sha256 "bd4fecc8aeecef32d9e7ac11dc09ef6f9550a512ac25a29a60af3b5145a5234b" => :mojave
+  end
+
+def install
     args = %W[
       -DCMAKE_INSTALL_LOCALSTATEDIR=#{var}
       -DDISTR_BUILD=macosbrew

@@ -6,6 +6,12 @@ class Manticoresearch < Formula
   sha256 "b8eba31eea5f6f5cf7cb7986c94cb40904f96da99e178c724e7f0081de02388e"
   head "https://github.com/manticoresoftware/manticoresearch.git"
   
+  bottle do
+    root_url "http://dev.manticoresearch.com/bottles"
+    sha256 "f65aba206f02510a1cd52ab7457e6c132f5840f307aef3cc3e6a8870cf373449" => :sierra
+    sha256 "bd4fecc8aeecef32d9e7ac11dc09ef6f9550a512ac25a29a60af3b5145a5234b" => :mojave
+  end
+  
   depends_on "cmake" => :build
   depends_on "icu4c" => :build
   depends_on "libpq" => :build
@@ -18,13 +24,7 @@ class Manticoresearch < Formula
     var/"manticore/data"
   end
 
-  bottle do
-    root_url "http://dev.manticoresearch.com/bottles"
-    sha256 "f65aba206f02510a1cd52ab7457e6c132f5840f307aef3cc3e6a8870cf373449" => :sierra
-    sha256 "bd4fecc8aeecef32d9e7ac11dc09ef6f9550a512ac25a29a60af3b5145a5234b" => :mojave
-  end
-
-def install
+  def install
     args = %W[
       -DCMAKE_INSTALL_LOCALSTATEDIR=#{var}
       -DDISTR_BUILD=macosbrew

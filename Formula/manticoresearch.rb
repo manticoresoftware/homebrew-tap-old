@@ -65,6 +65,7 @@ class Manticoresearch < Formula
             <string>#{opt_bin}/searchd</string>
             <string>--config</string>
             <string>#{etc}/manticore/sphinx.conf</string>
+            <string>--nodetach</string>
         </array>
         <key>WorkingDirectory</key>
         <string>#{datadir}</string>

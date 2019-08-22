@@ -1,15 +1,14 @@
 class Manticoresearch < Formula
   desc "Open source text search engine"
   homepage "https://www.manticoresearch.com"
-  url "https://github.com/manticoresoftware/manticoresearch/releases/download/3.1.0/manticore-3.1.0-190716-445e806-release.tar.gz"
-  version "3.1.0"
-  sha256 "b8eba31eea5f6f5cf7cb7986c94cb40904f96da99e178c724e7f0081de02388e"
+  url "https://github.com/manticoresoftware/manticoresearch/releases/download/3.1.2/manticore-3.1.2-190822-47b6bc2-release.tar.gz"
+  version "3.1.2"
+  sha256 "6ca1cb0d39aff7a4fa2a13da362a9106ff16c75bb4a89bc8e4f327ce2bbad2a9"
   head "https://github.com/manticoresoftware/manticoresearch.git"
 
   bottle do
     root_url "http://dev.manticoresearch.com/bottles"
-    sha256 "70e3791b8ba1ab77b78606fee38f1f741f6a239816c3abd442aa128de9e1cdc7" => :sierra
-    sha256 "cea606757643e025528d32c1fc54c91ac579054c645a44f2b68453008f8b1017" => :mojave
+    sha256 "5604b8183e2d006ce0c34ab415dcccb1f8f2b58d299390ee5e440a42f8dcf20e" => :mojave
   end
 
   depends_on "cmake" => :build
@@ -18,11 +17,9 @@ class Manticoresearch < Formula
   depends_on "mysql@5.7" => :build
   depends_on "unixodbc" => :build
   depends_on "openssl"
+
   conflicts_with "sphinx",
    :because => "manticore,sphinx install the same binaries."
-  def datadir
-    var/"manticore/data"
-  end
 
   def install
     args = %W[
@@ -38,7 +35,7 @@ class Manticoresearch < Formula
   def post_install
     (var/"run/manticore").mkpath
     (var/"log/manticore").mkpath
-    datadir.mkpath
+    (var/"data/manticore").mkpath
   end
 
   def caveats
@@ -68,7 +65,7 @@ class Manticoresearch < Formula
             <string>--nodetach</string>
         </array>
         <key>WorkingDirectory</key>
-        <string>#{datadir}</string>
+        <string>#{HOMEBREW_PREFIX}</string>
       </dict>
     </plist>
   EOS

@@ -9,6 +9,7 @@ class Manticoresearch < Formula
   bottle do
     root_url "http://dev.manticoresearch.com/bottles"
     sha256 "5604b8183e2d006ce0c34ab415dcccb1f8f2b58d299390ee5e440a42f8dcf20e" => :mojave
+    sha256 "d98426f5832959536a341ccf8b1d57f519a5cf232ef9010a93a5290dbdeca8d7" => :sierra
   end
 
   depends_on "cmake" => :build

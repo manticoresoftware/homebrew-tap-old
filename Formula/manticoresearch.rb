@@ -1,15 +1,14 @@
 class Manticoresearch < Formula
   desc "Open source text search engine"
   homepage "https://www.manticoresearch.com"
-  url "https://github.com/manticoresoftware/manticoresearch/releases/download/3.1.2/manticore-3.1.2-190822-47b6bc2-release.tar.gz"
-  version "3.1.2"
-  sha256 "6ca1cb0d39aff7a4fa2a13da362a9106ff16c75bb4a89bc8e4f327ce2bbad2a9"
+  url "https://github.com/manticoresoftware/manticoresearch/releases/download/3.2.0/manticore-3.2.0-191017-e526a01-release.tar.gz"
+  version "3.2.0"
+  sha256 "df6dbcc4df01065fc3cc6328f043b8cef3eb403a28671455cd3c8fc4217e3391"
   head "https://github.com/manticoresoftware/manticoresearch.git"
 
   bottle do
     root_url "http://dev.manticoresearch.com/bottles"
-    sha256 "5604b8183e2d006ce0c34ab415dcccb1f8f2b58d299390ee5e440a42f8dcf20e" => :mojave
-    sha256 "d98426f5832959536a341ccf8b1d57f519a5cf232ef9010a93a5290dbdeca8d7" => :sierra
+    sha256 "8d0599adafa21642a7a6c3bddc1df3c6552f479564042acb24fe53fcc92f9f37" => :mojave
   end
 
   depends_on "cmake" => :build

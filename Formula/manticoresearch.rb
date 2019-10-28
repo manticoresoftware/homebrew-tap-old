@@ -12,6 +12,7 @@ class Manticoresearch < Formula
 
   depends_on "cmake" => :build
   depends_on "libpq" => :build
+  depends_on "icu4c" => :build
   depends_on "mysql" => :build
   depends_on "unixodbc" => :build
   depends_on "openssl"

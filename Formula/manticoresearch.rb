@@ -8,6 +8,7 @@ class Manticoresearch < Formula
   bottle do
     root_url "http://dev.manticoresearch.com/bottles"
     sha256 "8d0599adafa21642a7a6c3bddc1df3c6552f479564042acb24fe53fcc92f9f37" => :mojave
+    sha256 "e4b3da99b69ec231ed1337cfa4e04b848adaf891b325a186acad664ab149a491" => :sierra
   end
 
   depends_on "cmake" => :build
@@ -18,7 +19,7 @@ class Manticoresearch < Formula
   depends_on "openssl"
 
   conflicts_with "sphinx",
-   :because => "manticore,sphinx install the same binaries."
+   :because => "manticore, sphinx install the same binaries."
 
   def install
     args = %W[

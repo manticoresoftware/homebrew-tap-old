@@ -7,7 +7,7 @@ class Manticoresearch < Formula
 
   bottle do
     root_url "http://dev.manticoresearch.com/bottles"
-    sha256 "8d0599adafa21642a7a6c3bddc1df3c6552f479564042acb24fe53fcc92f9f37" => :mojave
+    sha256 "5d1dac34c9aa1f66f4572f61aba770806203d223b3c5c727b9ef1b72d5a5a742" => :mojave
     sha256 "e4b3da99b69ec231ed1337cfa4e04b848adaf891b325a186acad664ab149a491" => :sierra
   end
 
@@ -16,7 +16,7 @@ class Manticoresearch < Formula
   depends_on "icu4c" => :build
   depends_on "mysql" => :build
   depends_on "unixodbc" => :build
-  depends_on "openssl"
+  depends_on "openssl@1.1"
 
   conflicts_with "sphinx",
    :because => "manticore, sphinx install the same binaries."

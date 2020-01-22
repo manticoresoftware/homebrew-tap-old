@@ -5,11 +5,6 @@ class Manticoresearch < Formula
   sha256 "7942ae4d3484b125b9c336b75d751ac9b71b71f9f60ead9272be84ee69bb5e6f"
   head "https://github.com/manticoresoftware/manticoresearch.git"
 
-  bottle do
-    root_url "http://dev.manticoresearch.com/bottles"
-    sha256 "e6a17fc5360bfd1f42e5981f0459c1ac807fc4aacccbaaf76ba610a5e651dee3" => :mojave
-  end
-
   depends_on "cmake" => :build
   depends_on "libpq" => :build
   depends_on "icu4c" => :build
@@ -37,7 +32,7 @@ class Manticoresearch < Formula
     (var/"data/manticore").mkpath
   end
 
-  plist_options :manual => "searchd --config #{HOMEBREW_PREFIX}/etc/manticore/sphinx.conf"
+  plist_options :manual => "searchd --config #{HOMEBREW_PREFIX}/etc/manticore/manticore.conf"
 
   def plist; <<~EOS
     <?xml version="1.0" encoding="UTF-8"?>
@@ -54,7 +49,7 @@ class Manticoresearch < Formula
         <array>
             <string>#{opt_bin}/searchd</string>
             <string>--config</string>
-            <string>#{etc}/manticore/sphinx.conf</string>
+            <string>#{etc}/manticore/manticore.conf</string>
             <string>--nodetach</string>
         </array>
         <key>WorkingDirectory</key>
@@ -65,7 +60,7 @@ class Manticoresearch < Formula
   end
 
   test do
-    (testpath/"sphinx.conf").write <<~EOS
+    (testpath/"manticore.conf").write <<~EOS
       searchd {
         pid_file = searchd.pid
         binlog_path=#

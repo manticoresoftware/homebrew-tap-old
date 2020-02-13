@@ -2,9 +2,11 @@
 
 # The Manticore Search Homebrew Tap
 
-This is a custom [Homebrew](https://brew.sh)  tap for Manticore Search.
+This is a custom [Homebrew](https://brew.sh)  tap for Manticore Search. 
+
+Manticore Search is also available in the official [homebrew-core](https://github.com/Homebrew/homebrew-core) channel.
+
 Please note that this tap compile Manticore and don't use bottle. It will install  dependencies required for compiling.
-An official formulae will be added to homebrew-core in future.
 
 ## Setup
 

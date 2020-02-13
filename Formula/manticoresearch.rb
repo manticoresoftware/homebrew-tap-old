@@ -4,10 +4,11 @@ class Manticoresearch < Formula
   url "https://github.com/manticoresoftware/manticoresearch/releases/download/3.3.0/manticore-3.3.0-200204-01fc8ad-release.tar.gz"
   sha256 "f62801f6eb50bd08cb8fe976f0a3a43c7600b979a1ced8d14b8261ca06eaf22c"
   head "https://github.com/manticoresoftware/manticoresearch.git"
+  version "3.3.0"  
 
   depends_on "cmake" => :build
-  depends_on "libpq" => :build
   depends_on "icu4c" => :build
+  depends_on "libpq" => :build
   depends_on "mysql" => :build
   depends_on "unixodbc" => :build
   depends_on "openssl@1.1"
@@ -29,7 +30,7 @@ class Manticoresearch < Formula
   def post_install
     (var/"run/manticore").mkpath
     (var/"log/manticore").mkpath
-    (var/"data/manticore").mkpath
+    (var/"manticore/data").mkpath
   end
 
   plist_options :manual => "searchd --config #{HOMEBREW_PREFIX}/etc/manticore/manticore.conf"
@@ -66,7 +67,6 @@ class Manticoresearch < Formula
         binlog_path=#
       }
     EOS
-    system bin/"searchd"
     pid = fork do
       exec bin/"searchd"
     end

@@ -1,15 +1,16 @@
 class Manticoresearch < Formula
   desc "Open source text search engine"
   homepage "https://www.manticoresearch.com"
-  url "http://repo.manticoresearch.com/repository/manticoresearch_source/release/manticore-3.4.2-200410-6903305-release.tar.gz"
-  version "3.4.2"
-  sha256 "a5dcdb561db57fd59fab63531eb23f0585f48432ef8be2b94ec6d979d0f35894"
+  url "http://repo.manticoresearch.com/repository/manticoresearch_source/dev/manticore-3.4.3-200716-2988cabe-release-source.tar.gz"
+  version "3.4.3"
+  sha256 "1cba10a8166246e7846abe938f8cbe0b9cf5fbaed6e7c6131121018d7ae554b8"
 
   depends_on "cmake" => :build
   depends_on "icu4c" => :build
   depends_on "libpq" => :build
   depends_on "mysql" => :build
   depends_on "unixodbc" => :build
+  depends_on "boost"=> :build
   depends_on "openssl@1.1"
 
   conflicts_with "sphinx",

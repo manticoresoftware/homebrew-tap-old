@@ -20,6 +20,7 @@ class Manticoresearch < Formula
     args = %W[
       -DCMAKE_INSTALL_LOCALSTATEDIR=#{var}
       -DDISTR_BUILD=macosbrew
+      -DBoost_NO_BOOST_CMAKE=ON
     ]
     mkdir "build" do
       system "cmake", "..", *std_cmake_args, *args

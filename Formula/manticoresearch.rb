@@ -1,9 +1,9 @@
 class Manticoresearch < Formula
   desc "Open source text search engine"
   homepage "https://www.manticoresearch.com"
-  url "https://repo.manticoresearch.com/repository/manticoresearch_source/dev/manticore-3.4.3-200720-97e07c0-release-source.tar.gz"
-  version "3.4.3"
-  sha256 "b72c70e091ec42e2a66de0ad7e2f99e8c0faf057e22223b9e24cfefd880ddf03"
+  url "https://repo.manticoresearch.com/repository/manticoresearch_source/release/manticore-3.5.0-200722-1d34c49-release-source.tar.gz"
+  version "3.5.0"
+  sha256 "c67c386f64416d772b3aaf52707f34b6fd30ea66d7619a92727a35dcc319228d"
 
   depends_on "cmake" => :build
   depends_on "icu4c" => :build

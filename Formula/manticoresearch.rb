@@ -3,7 +3,7 @@ class Manticoresearch < Formula
   homepage "https://www.manticoresearch.com"
   url "https://repo.manticoresearch.com/repository/manticoresearch_source/release/manticore-3.5.0-200722-1d34c49-release-source.tar.gz"
   version "3.5.0"
-  sha256 "c67c386f64416d772b3aaf52707f34b6fd30ea66d7619a92727a35dcc319228d"
+  sha256 "00d65103d7f07d52b953731566c1015d5f668dd35e8709eeca10cc0fbedb9a66"
 
   depends_on "cmake" => :build
   depends_on "icu4c" => :build

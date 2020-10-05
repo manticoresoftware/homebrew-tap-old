@@ -30,7 +30,7 @@ $ brew services start manticoresearch
 
 The configuration is located at ``/usr/local/etc/manticore/sphinx.conf``
 
-Additional dependencies for indexing are ``mysql@5.7``, ``libpq`` and ``unixodbc``.
+Additional dependencies for indexing are ``mysql``, ``libpq`` and ``icu4c``.
 
 Please note that the replication feature is not available on MacOS.
 
